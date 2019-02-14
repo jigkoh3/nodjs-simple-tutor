@@ -23,6 +23,24 @@ app.get('/api/test/:id', (req,res)=>{
     });
 })
 
+app.put('/api/test/:id', (req,res)=>{
+    res.jsonp({
+        status:200,
+        data:{
+            message : `updatedata at ${req.id} success...`
+        }
+    })
+})
+
+app.delete('/api/test/:id',(req,res)=>{
+    res.jsonp({
+        status:200,
+        data:{
+            message : `delete data at ${req.id} success...`
+        }
+    })
+})
+
 app.param('id',(req,res,next, id)=>{
     req.id = id;
     next();
